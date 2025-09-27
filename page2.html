@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with US!</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+
+    <!-- my css -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div id="contact" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+
+                    <a href="./pelatihan.html" class="text-link"> Kembali ke Beranda</a>
+
+                    <div class="card border-0 shadow-sm text-center mt-5">
+                        <div class="card-body">
+                            <img src="./asset/logo.png" alt="logo" width="30%">
+                        </div>
+                    </div>
+
+                    <h2 class="text-center mb-4 mt-3">Ayo Mulai Kerjasama Bareng Kami!</h2>
+
+                    <form id="collabForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="name" placeholder="Masukkan nama kamu">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Masukkan email aktif">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Pesan</label>
+                            <textarea class="form-control" id="message" rows="4"
+                                placeholder="Ceritakan kebutuhanmu di sini..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-utama w-100">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Handle form submit
+        document.getElementById("collabForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // biar nggak reload halaman
+
+            // SweetAlert2 popup
+            Swal.fire({
+                title: 'Yeay 🎉',
+                text: 'Berhasil kirim pesan, kami akan segera menghubungi balik!',
+                icon: 'success',
+                confirmButtonText: 'Oke Siap 🚀'
+            });
+
+            // reset form
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
